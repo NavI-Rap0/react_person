@@ -3,12 +3,17 @@ export const Person = ({ person }) => {
 
   let partnersText = 'I am not married';
 
-  if (isMarried === true && sex === 'm') {
-    partnersText = `${partnerName} is my wife`;
-  } else if (isMarried === true && sex === 'f') {
-    partnersText = `${partnerName} is my husband`;
-  } else {
-    partnersText = 'I am not married';
+  if (isMarried) {
+    switch (sex) {
+      case 'm':
+        partnersText = `${partnerName} is my wife`;
+        break;
+      case 'f':
+        partnersText = `${partnerName} is my husband`;
+        break;
+      default:
+        break;
+    }
   }
 
   return (
